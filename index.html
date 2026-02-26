@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metro Dash Legends</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Metro Dash Legends</h1>
+    <div class="stats">
+      <span>Coins: <strong id="coinsTotal">0</strong></span>
+      <span>Gems: <strong id="gemsTotal">0</strong></span>
+      <span>Level: <strong id="playerLevel">1</strong></span>
+      <span>XP: <strong id="playerXp">0</strong></span>
+    </div>
+  </header>
+
+  <main>
+    <section class="game-panel">
+      <canvas id="gameCanvas" width="960" height="540" aria-label="Game canvas"></canvas>
+      <div class="controls-help">
+        <p><b>Controls:</b> A/D or ←/→ move lanes • W/S or ↑/↓ jump/slide • Space start/pause</p>
+      </div>
+      <div class="hud">
+        <span>Run Coins: <strong id="runCoins">0</strong></span>
+        <span>Run Gems: <strong id="runGems">0</strong></span>
+        <span>Distance: <strong id="runDistance">0</strong>m</span>
+        <span>Multiplier: <strong id="scoreMult">1x</strong></span>
+      </div>
+      <div class="buttons">
+        <button id="startBtn">Start Run</button>
+        <button id="pauseBtn">Pause</button>
+        <button id="packBtn">Open Starter Pack (120 coins)</button>
+      </div>
+      <p id="runMessage" class="message">Choose your character, mode, then start your run.</p>
+    </section>
+
+    <aside class="sidebar">
+      <section>
+        <h2>Story Modes</h2>
+        <div id="modesList" class="list"></div>
+      </section>
+
+      <section>
+        <h2>Characters</h2>
+        <div id="charactersList" class="list"></div>
+      </section>
+
+      <section>
+        <h2>Progress & Upgrades</h2>
+        <div class="card">
+          <label>Magnet (coin pull): <span id="magnetLevel">1</span></label>
+          <button id="upgradeMagnet">Upgrade (75 coins)</button>
+        </div>
+        <div class="card">
+          <label>Gem Finder: <span id="gemLevel">1</span></label>
+          <button id="upgradeGem">Upgrade (2 gems)</button>
+        </div>
+      </section>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

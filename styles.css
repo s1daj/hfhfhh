@@ -1,0 +1,83 @@
+:root {
+  --bg: #111319;
+  --panel: #1d2230;
+  --accent: #4de2ff;
+  --accent2: #ffce4d;
+  --text: #f2f4f8;
+  --muted: #afbdd0;
+  --ok: #5dff8a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: radial-gradient(circle at top, #1f2638, var(--bg));
+  color: var(--text);
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: #0e1017;
+  border-bottom: 1px solid #283047;
+}
+h1 { margin: 0; font-size: 1.4rem; }
+.stats { display: flex; gap: 16px; color: var(--muted); font-size: .95rem; }
+main {
+  display: grid;
+  grid-template-columns: minmax(600px, 2fr) minmax(280px, 1fr);
+  gap: 14px;
+  padding: 14px;
+}
+.game-panel, .sidebar section {
+  background: var(--panel);
+  border: 1px solid #2d3550;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+.game-panel { padding: 12px; }
+canvas {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #394367;
+  background: linear-gradient(#3f7dcf, #9de2ff 50%, #474d61 50%, #2d3243);
+}
+.controls-help, .hud, .buttons { margin-top: 10px; }
+.controls-help { color: var(--muted); font-size: .9rem; }
+.hud { display: flex; gap: 14px; flex-wrap: wrap; }
+.buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+button {
+  background: #27324d;
+  color: var(--text);
+  border: 1px solid #3d4c75;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+button:hover { border-color: var(--accent); }
+button.selected { background: #2f4f7f; border-color: var(--accent); }
+button:disabled { opacity: .6; cursor: not-allowed; }
+.sidebar { display: flex; flex-direction: column; gap: 12px; }
+.sidebar section { padding: 10px; }
+.sidebar h2 { margin: 0 0 8px; font-size: 1.05rem; }
+.list { display: grid; gap: 8px; }
+.card {
+  padding: 8px;
+  border: 1px solid #3a4361;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.message {
+  min-height: 1.2em;
+  margin: 10px 0 0;
+  color: var(--ok);
+}
+.subtext { color: var(--muted); font-size: .85rem; }
+@media (max-width: 1050px) {
+  main { grid-template-columns: 1fr; }
+}
